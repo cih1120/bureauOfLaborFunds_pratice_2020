@@ -2,7 +2,7 @@ body{
 	background:#FFE340;
 }
 *{
-	font-family:Microsoft JhengHei;
+	font-family:"微軟正黑體", Comic Sans MS,arial,helvetica,sans-serif;
 }
 .clear{
 	clear:both;
@@ -315,11 +315,13 @@ header{
 	.contentLeft input{
 	box-sizing: border-box;
 	width: 100%;
-	padding: 10px 100px;
+	padding: 10px 0px;
+	text-align: center;
 	}
 }
 @media (max-width: 650px) {
 	.window{
+		padding: 5vh 5vw;
 		border-radius: 18px;
 		height: 90vh;
 		top: 5vh;
@@ -328,7 +330,7 @@ header{
 		width: 80%;
 	}
 	.window h3{
-		font-size: 16px;
+		font-size: 20px;
 	}
 }
 /* 視窗內容」 *//* 視窗內容」 *//* 視窗內容」 */
@@ -382,15 +384,26 @@ header{
 	color:#CFCFCF;
 	flex-grow: 1;
 }
+@media (max-width: 800px) {
+	.seal_row{
+	justify-content: space-between;
+	width: 100%;
+	}
+	.seal_row img{
+	width: 25%;
+	margin:0 20px;
+	}
+	.cardBtn{
+	width: 90%;
+	}
+}
 @media (max-width: 650px) {
 	.seal_card .card_content>img{
 	width: 100%;
 	}
 	.seal_row img{
-	width: 30%;
-	}
-	.cardBtn{
-	width: 90%;
+	width: 25%;
+	margin:0 7px;
 	}
 }
 /*印章區塊結束*//*印章區塊結束*//*印章區塊結束*/
