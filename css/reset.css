@@ -47,3 +47,14 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+input{
+	padding: 0px 0px;
+	background: #0000;
+	border: 0 solid #0000;
+}
+input[type=button] {   
+    /* Remove First */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;  
+}

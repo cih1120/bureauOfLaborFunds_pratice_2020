@@ -11,10 +11,19 @@ $('.openWin').click(function(event){
 	event.preventDefault();
 	$(this).parent().parent().parent().find('.window').fadeIn(100);
 })
+// 打開人物視窗
 $('.winClose').click(function(event){
 	event.preventDefault();
 	$(this).parent().parent().find('.window').fadeOut(100);
 })
+// 關閉人物視窗
+$('.cardBtn').click(function(){
+	event.preventDefault();
+	$('#form_win').fadeIn(100);
+	console.log('eee');
+})
+
+
 // 點擊 #open_win1 後 #win1 diplay=block,
 // 點擊 .winClose ， 開啟中的 window 會display=none;
 // 點擊.learn會觸發該視窗的#poeple1seal改變src並且也同時變更最下方的src，並且改變布林
