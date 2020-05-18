@@ -12,16 +12,23 @@ $('.openWin').click(function(event){
 	$(this).parent().parent().parent().find('.window').fadeIn(100);
 })
 // 打開人物視窗
-$('.winClose').click(function(event){
+$('.people .winClose').click(function(event){
 	event.preventDefault();
 	$(this).parent().parent().find('.window').fadeOut(100);
 })
 // 關閉人物視窗
 $('.cardBtn').click(function(){
 	event.preventDefault();
-	$('#form_win').fadeIn(100);
-	console.log('eee');
+	$('.displayNone').fadeIn(100);
 })
+// 打開填寫視窗
+$('.sign_win .winClose').click(function(){
+	event.preventDefault();
+	$('.displayNone').fadeOut(100);
+})
+// 關閉填寫視窗
+
+
 
 
 // 點擊 #open_win1 後 #win1 diplay=block,

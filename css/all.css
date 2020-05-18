@@ -17,6 +17,9 @@ body{
 	max-width: 960px;
 	margin:0 auto;
 }
+.displayNone{
+	display: none;
+}
 h2{
 	font-size:32px;
 	font-weight: 900;
@@ -176,6 +179,7 @@ header{
 	text-decoration:none;
 	color: #000;
 	font-weight: 500;
+	transition: all 0.2s;
 }
 .openWin h3{
 	position: relative;
@@ -185,6 +189,12 @@ header{
 	position: absolute;
 	right: 0;
 	top: 0
+}
+.openWin:hover{
+	transform: scale(1.015, 1.015);
+	background: #000;
+	border: 3px solid #fff;
+	color: #fff;
 }
 @media (max-width: 850px) {
 	.main_people img,.people:nth-child(3) .main_people img{
@@ -238,9 +248,13 @@ header{
 	position: absolute;
 	right:30px;
 	top:30px;
-	width: 60px;
-	height: 60px;
+	width: 40px;
+	height: 40px;
 	cursor: pointer;
+	transition: all 0.3s;
+}
+.winClose:hover{
+	transform: rotate(-0.5turn);
 }
 .winClose:before, .winClose:after {
 	content: " ";
@@ -250,8 +264,8 @@ header{
 	border-radius: 10px;
 	background: #000;
 	position: absolute;
-	left: 22px;
-	top: 10px;
+	left: 18px;
+	top: 1px;
 	transform:rotate(45deg);
 }
 .winClose:before{
@@ -289,20 +303,12 @@ header{
 	font-weight: 600;
 	padding: 10px 100px;
 	border: 0px solid #0000;
+	transition: 0.2s all;
 }
-/*@media (max-width: 800px) {
-	.window{
-		height: auto;
-		padding: 5vh 4vw;
-	}
-	.contentRight .contentSeal{
-		width: 30%;
-		left: 70%;
-	}
-	.people:nth-child(3) .contentSeal{
-		left:20%;
-	}
-}*/
+.contentLeft input:hover{
+	background: #000 0% 0% no-repeat padding-box;
+	color:#FFE340;
+}
 @media (max-width: 800px) {
 	.window{
 	box-sizing: border-box;
@@ -339,6 +345,15 @@ header{
 	}
 	.window h3{
 		font-size: 20px;
+	}
+}
+@media (max-width: 320px) {
+	.window>h2{
+		font-size: 26px;
+	}
+	.window h3{
+		font-size: 17px;
+		line-height: 20px;
 	}
 }
 /* 視窗內容」 *//* 視窗內容」 *//* 視窗內容」 */
@@ -418,10 +433,14 @@ header{
 .sign_win{
 	text-align: center;
 	top: 15%;
-	height: 50%;
+	height: 60%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
 }
 .sign_win h4{
-	margin-top:5px;
+	margin-top: 10px;
 }
 .sign_win label{
 	display:block;
@@ -435,7 +454,7 @@ header{
 	border-left-style: none;
 	border-right-style: none;
 	padding: 5px 10px;
-	width: 45%;
+	width: 74%;
 	margin-left: 20px;
 }
 #learnArticle{
@@ -447,7 +466,36 @@ header{
 	margin:0 auto;
 	display: block;
 	background: #23B573;
-	padding:10px 100px;
+	padding:10px 0px;
+	width: 65%;
+	border:2px solid #0000 ;
+}
+.greenBtn:hover{
+	background: #fff;
+	color:#23B573;
+	border:2px solid #23B573 ;
+}
+@media (max-width: 800px) {
+	.sign_win{
+		height: 80%;
+		top:10%;
+	}
+	.sign_win .input{
+		width: 74%;
+	}
+}
+@media (max-width: 320px) {
+	.sign_win{
+		height: 90%;
+		top:5%;
+	}
+	.sign_win .input{
+		width: 70%;
+	}
+	.winClose{
+	right:10px;
+	top:10px;
+	}
 }
 /*印章表格結束*//*印章表格結束*//*印章表格結束*/
 footer{
