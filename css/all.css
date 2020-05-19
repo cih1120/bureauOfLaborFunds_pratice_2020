@@ -20,6 +20,11 @@ body{
 .displayNone{
 	display: none;
 }
+.defaultBtn{
+	background: #CFCFCF !important;
+	color:#fff !important;
+	cursor:not-allowed !important;;
+}
 h2{
 	font-size:32px;
 	font-weight: 900;
@@ -378,9 +383,9 @@ header{
 .cardBtn{
 	box-sizing: border-box;
 	display: block;
-	background: #CFCFCF;
+	background: #23B573;
+	color: #fff;
 	border-radius: 31px;
-	color:#fff;
 	padding:10px 50px;
 	text-align: center;
 	font-size: 24px;

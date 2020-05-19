@@ -1,11 +1,19 @@
-// 印章的樣式（上與下）
-var seal1 = document.querySelectorAll('.sela1');
-var seal2 = document.querySelectorAll('.sela2');
-var seal3 = document.querySelectorAll('.sela3');
+var seal1 = document.querySelector('.seal1');
+var seal2 = document.querySelector('.seal2');
+var seal3 = document.querySelector('.seal3');
+// 視窗內印章
+var bottom_seale1 = document.getElementById('#bottom_seal1');
+var bottom_seale2 = document.getElementById('#bottom_seal2');
+var bottom_seale3 = document.getElementById('#bottom_seal3');
+// 下方印章
+var learn1 = document.getElementById('learn1');
+var learn2 = document.getElementById('learn2');
+var learn3 = document.getElementById('learn3');
+// 視窗內了解按鈕
 
-//window關閉按鈕（取消所有display:block）
-var winClose = document.querySelectorAll('.winClose');
-var peopleBoolean = [];
+var cardBtn = document.querySelector('.cardBtn')
+var peopleArray = JSON.parse(localStorage.getItem('seal'))||[];
+var str = '';
 
 $('.openWin').click(function(event){
 	event.preventDefault();
@@ -27,6 +35,90 @@ $('.sign_win .winClose').click(function(){
 	$('.displayNone').fadeOut(100);
 })
 // 關閉填寫視窗
+reloadSeal();
+checkSeal();
+function reloadSeal(){
+	for(var i=0;i<3;i++){
+		if(peopleArray[i]==1){
+			seal1.src="img/seal.png";
+			bottom_seal1.src="img/seal.png"; 
+			learn1.setAttribute("disabled", "disabled");
+			learn1.classList.add("defaultBtn");
+		}else if(peopleArray[i]==2){
+			seal2.src="img/seal.png";
+			bottom_seal2.src="img/seal.png"; 
+			learn2.setAttribute("disabled", "disabled");
+			learn2.classList.add("defaultBtn");
+		}else if(peopleArray[i]==3){
+			seal3.src="img/seal.png";
+			bottom_seal3.src="img/seal.png"; 
+			learn3.setAttribute("disabled", "disabled");
+			learn3.classList.add("defaultBtn");
+		}else{
+			return;
+		}
+	}
+}
+
+function checkSeal(){
+	if(peopleArray.length == 3){
+		cardBtn.classList.remove("defaultBtn");
+		cardBtn.setAttribute("disabled", "value");
+	}else{
+		return;
+	}
+}
+
+function change(num){
+	seal+num.src="img/seal.png";
+	bottom_seal+num.src="img/seal.png"; 
+	learn+num.setAttribute("disabled", "disabled");
+	learn+num.classList.add("defaultBtn");
+	str = JSON.stringify(peopleArray);
+	localStorage.setItem('seal',str);
+	checkSeal();
+}
+
+
+// function change1(){
+// 	seal1.src="img/seal.png";
+// 	bottom_seal1.src="img/seal.png"; 
+// 	learn1.setAttribute("disabled", "disabled");
+// 	learn1.classList.add("defaultBtn");
+// 	peopleArray.push(1);
+// 	str = JSON.stringify(peopleArray);
+// 	localStorage.setItem('seal',str);
+// 	checkSeal();
+// };
+// function change2(){
+// 	seal2.src="img/seal.png";
+// 	bottom_seal2.src="img/seal.png"; 
+// 	learn2.setAttribute("disabled", "disabled");
+// 	learn2.classList.add("defaultBtn");
+// 	peopleArray.push(2);
+// 	str = JSON.stringify(peopleArray);
+// 	localStorage.setItem('seal',str);
+// 	checkSeal();
+// };
+// function change3(){
+// 	seal3.src="img/seal.png";
+// 	bottom_seal3.src="img/seal.png"; 
+// 	learn3.setAttribute("disabled", "disabled");
+// 	learn3.classList.add("defaultBtn");
+// 	peopleArray.push(3);
+// 	str = JSON.stringify(peopleArray);
+// 	localStorage.setItem('seal',str);
+// 	checkSeal();
+// };
+learn1.addEventListener('click',function(){
+	change(1);
+});
+learn2.addEventListener('click',function(){
+	change(2);
+});
+learn3.addEventListener('click',function(){
+	change(3);
+});
 
 
 
