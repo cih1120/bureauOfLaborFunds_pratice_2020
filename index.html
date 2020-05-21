@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/all.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-</head>
+<script src="https://unpkg.com/scrollreveal"></script></head>
 <body>
     <div class="wrap">
         <header>
@@ -39,7 +39,7 @@
 
         <div class="people">
         <div class="main_people clear">
-            <img src="img/people1.png" alt="王太太">
+            <img src="img/people1.png" alt="王太太" class='grid'>
             <div class="people_title">
             <h2>聽說</h2>
             <h3>隔壁的王太太每個月都可以拿到 國家兩份的老年年金？</h3>
@@ -66,7 +66,7 @@
 
         <div class="people">
         <div class="main_people clear">
-            <img src="img/people2.png" alt="許先生">
+            <img src="img/people2.png" alt="許先生" class='grid'>
             <div class="people_title">
             <h2>聽說</h2>
             <h3>即將退休的許先生,工作沒滿15年, 也可以領老年年金?</h3>
@@ -83,7 +83,7 @@
                     </div>
                     <div class="contentLeft">
                         <h3>許先生45歲離職，小有存款決定提早退休。勞保年資只有12年，但因為加入國保到，所以<span class='green'>國保年資跟勞保年資加起來超過15年，<span class='bold'>也可以領取勞保老年年金哦。</span></span></h3>
-                        <input type="button" class="learn default" id="learn2" value="我已了解">
+                        <input type="button" class="learn default" id="learn2"  value="我已了解">
                     </div>
                 </div>
         </section>
@@ -93,7 +93,7 @@
 
          <div class="people">
          <div class="main_people clear">
-            <img src="img/people3.png" alt="林太太">
+            <img src="img/people3.png" alt="林太太" class='grid'>
             <div class="people_title">
             <h2>聽說</h2>
             <h3>待業中的林太太,剛好在待業時懷孕了, 雖然沒有勞保,但依然有生育給付哦!</h3>
@@ -126,13 +126,13 @@
         <h3>解開每位大人物的保險秘訣，搜集三枚印章， <br>
         就可以參加國保偵查隊抽大獎活動喔！</h3>
         <div class="seal_row">
-            <img src="img/seal_default.png" alt="" class="seal1" id="bottom_seal1">
+            <img src="img/seal_default.png" alt="" class="bottom_seal" >
             <hr class="block">
-            <img src="img/seal_default.png" alt="" class="seal2" id="bottom_seal2">
+            <img src="img/seal_default.png" alt="" class="bottom_seal" >
             <hr class="block">
-            <img src="img/seal_default.png" alt="" class="seal3" id="bottom_seal3">
+            <img src="img/seal_default.png" alt="" class="bottom_seal" >
         </div>
-        <input type="button"  disabled="disabled" class="cardBtn defaultBtn" value='蒐集完抽獎去！'>
+        <input type="button"   class="cardBtn defaultBtn" id="openForm" value='蒐集完抽獎去！'>
         </div> 
         
         <div class="displayNone">
@@ -158,5 +158,31 @@
     </footer>
 
     <script src="js/all.js"></script>
+ <script>
+        window.sr = ScrollReveal({ 
+            // 參數設定[註1]
+            origin: "left",  // 起始位置
+            distance: "20px",  // 距離
+            duration: 600,  // 動畫時間
+            delay: 100,  // 動畫延遲時間
+            rotate: { x: 0, y: 0, z: 0 },  // 旋轉角度
+            opacity: 0,  // 透明度
+            scale: 1, // 縮放比例
+            easing: "cubic-bezier(0.6, 0.2, 0.1, 1)", // 動畫速度曲線
+            container: window.document.documentElement, // 外層
+            mobile: true, // 支援行動裝置
+            reset: false, // 每次都啟動動畫
+            useDelay: "always", // 延遲動畫次數
+            viewFactor: 0.3, // 當該物件在可視範圍內，則顯示此物件(0.2表示可視範圍20%)
+            viewOffset: { top: 0, right: 0, bottom: 0, left: 0 }, // 當外層有設定間隔造成偏移，則請設定在此維持精準度
+            beforeReveal: function (domEl) { console.log(1) }, // 當啟動前，則執行此函式
+            beforeReset: function (domEl) {console.log(2) }, // 當重啟前，則執行此函式
+            afterReveal: function (domEl) {console.log(3) }, // 當啟動後，則執行此函式
+            afterReset: function (domEl) {console.log(4) } // 當重啟後，則執行此函式
+        });
+        sr.reveal( ".grid", {
+            // 參數設定[註1]
+        });
+    </script>
 </body>
 </html>
